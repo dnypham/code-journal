@@ -11,10 +11,6 @@
   font-family: 'Proza Libre', sans-serif;
 }
 
-.padding {
-  padding: 10px;
-}
-
 .text-box-styling {
   color: #181818;
   padding: 10px;
@@ -33,8 +29,12 @@
 }
 
 .positioning {
-  padding: 10px 0;
+  padding-bottom: 10px;
   line-height: 2em;
+}
+
+.padding-top {
+  padding-top: 10px;
 }
 
 .flex-space-between {
@@ -113,6 +113,19 @@ body {
 
 .new-button {
   width: 50px;
+}
+
+.entry-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.entry {
+  margin-bottom: 50px;
+}
+
+.test {
+  vertical-align: text-top;
 }
 
 /* ----------PSEUDO-CLASSES---------- */
