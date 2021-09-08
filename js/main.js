@@ -17,7 +17,8 @@ $form.addEventListener('submit', function (event) {
   var entry = {
     title: $form.title.value,
     photoUrl: $form.photoUrl.value,
-    notes: $form.notes.value
+    notes: $form.notes.value,
+    entryId: data.nextEntryId
   };
 
   data.nextEntryId++;
