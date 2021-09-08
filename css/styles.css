@@ -60,12 +60,17 @@ textarea:focus {
 }
 
 .save-button {
+  cursor: pointer;
   color: #eeeaf2;
   background-color: #432f6d;
   height: 30px;
   width: 65px;
   border: none;
   border-radius: 4px;
+}
+
+.save-button:hover {
+  background-color: rgb(67, 47, 109, 0.9);
 }
 
 .justify-right {
