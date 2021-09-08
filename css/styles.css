@@ -43,6 +43,25 @@
   background-color: #432f6d;
   color: #eeeaf2;
   font-size: 10px;
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  padding-right: 20px;
+}
+
+h1.nav-links {
+  cursor: default;
+}
+
+.nav-links > a {
+  text-decoration: none;
+  color: #eeeaf2;
 }
 
 /* ----------FORM---------- */
@@ -91,4 +110,8 @@ textarea:focus {
 
 .save-button:hover {
   background-color: rgb(67, 47, 109, 0.9);
+}
+
+.nav-links > a:hover {
+  color: rgb(238, 234, 242, 0.8);
 }
