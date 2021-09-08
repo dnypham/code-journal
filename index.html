@@ -15,9 +15,57 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <h1>Code Journal</h1>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
+    <div data-view="entry-form">
+      <form>
+        <div class="container">
+          <div class="row">
+            <div class="column-full">
+              <h1>New Entry</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-half">
+              <img class="placeholder-img" src="images/placeholder-image-square.jpg" alt="Placeholder">
+            </div>
+            <div class="column-half">
+              <div class="text-box-styles">
+                <label for="title">Title</label>
+                <input class="text-box" type="text" id="title" name="title">
+              </div>
+              <div class="text-box-styles">
+                <label for="photo-url">Photo URL</label>
+                <input class="text-box" type="text" id="photo-url" name="photo-url">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <div class="text-box-styles">
+                <label for="notes">Notes</label>
+                <textarea class="notes-text-box" type="text" id="notes" name="notes"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <div class="text-box-styles justify-right">
+                <button class="save-button">SAVE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
