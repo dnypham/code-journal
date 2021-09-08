@@ -37,8 +37,22 @@
   line-height: 2em;
 }
 
-/* ----------HEADER---------- */
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.button {
+  cursor: pointer;
+  color: #eeeaf2;
+  background-color: #432f6d;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* ----------HEADER---------- */
 .header {
   background-color: #432f6d;
   color: #eeeaf2;
@@ -87,18 +101,18 @@ body {
 }
 
 .save-button {
-  cursor: pointer;
-  color: #eeeaf2;
-  background-color: #432f6d;
-  height: 30px;
   width: 65px;
-  border: none;
-  border-radius: 4px;
 }
 
 .justify-right {
   display: flex;
   justify-content: flex-end;
+}
+
+/* ----------ENTRIES---------- */
+
+.new-button {
+  width: 50px;
 }
 
 /* ----------PSEUDO-CLASSES---------- */
@@ -108,7 +122,7 @@ textarea:focus {
   outline-color: #472b71;
 }
 
-.save-button:hover {
+.button:hover {
   background-color: rgb(67, 47, 109, 0.9);
 }
 
