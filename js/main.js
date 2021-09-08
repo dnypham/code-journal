@@ -26,3 +26,38 @@ $form.addEventListener('submit', function (event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 });
+
+function renderEntry(entry) {
+  var $li = document.createElement('li');
+  $li.setAttribute('class', 'entry');
+
+  var $divRow = document.createElement('div');
+  $divRow.setAttribute('class', 'row');
+  $li.appendChild($divRow);
+
+  var $divColumn1 = document.createElement('div');
+  $divColumn1.setAttribute('class', 'column-half');
+  $divRow.appendChild($divColumn1);
+
+  var $img = document.createElement('img');
+  $img.setAttribute('class', 'placeholder-image');
+  $img.setAttribute('src', data.entries.photoUrl);
+  $img.setAttribute('alt', 'Entry image');
+  $divColumn1.appendChild($img);
+
+  var $divColumn2 = document.createElement('div');
+  $divColumn2.setAttribute('class', 'column-half');
+  $divRow.appendChild($divColumn2);
+
+  var $h2 = document.createElement('h2');
+  var $text1 = document.createTextNode(data.entries.title);
+  $h2.appendChild($text1);
+  $divColumn2.appendChild($h2);
+
+  var $p = document.createElement('p');
+  var $text2 = document.createTextNode(data.entries.notes);
+  $p.appendChild($text2);
+  $divColumn2.appendChild($p);
+
+  return $li;
+}
