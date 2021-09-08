@@ -3,11 +3,11 @@
 var $form = document.querySelector('form');
 var $img = document.querySelector('img');
 
-$form.addEventListener('input', function (event) {
+$form.addEventListener('focusout', function (event) {
   if (event.target.matches('.photo-url')) {
     $img.setAttribute('src', event.target.value);
   }
-  if (event.target.value === '') {
+  if (event.target.matches('.photo-url') && event.target.value === '') {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   }
 });
