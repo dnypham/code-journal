@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row">
         <div class="column-full">
-          <h1>Code Journal</h1>
+          <h1 class="font-proza thin-text">Code Journal</h1>
         </div>
       </div>
     </div>
@@ -30,35 +30,29 @@
         <div class="container">
           <div class="row">
             <div class="column-full">
-              <h1>New Entry</h1>
+              <h1 class="font-proza">New Entry</h1>
             </div>
-          </div>
-          <div class="row">
             <div class="column-half">
               <img class="placeholder-img" src="images/placeholder-image-square.jpg" alt="Placeholder">
             </div>
             <div class="column-half">
-              <div class="text-box-styles">
-                <label for="title">Title</label>
-                <input class="text-box" type="text" id="title" name="title" required>
+              <div class="positioning">
+                <label class="font-proza bold-text" for="title">Title</label>
+                <input class="text-box text-box-styling" type="text" id="title" name="title" required>
               </div>
-              <div class="text-box-styles">
-                <label for="photo-url">Photo URL</label>
-                <input class="text-box" type="text" id="photo-url" name="photo-url" required>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column-full">
-              <div class="text-box-styles">
-                <label for="notes">Notes</label>
-                <textarea class="notes-text-box" type="text" id="notes" name="notes" required></textarea>
+              <div class="positioning">
+                <label class="font-proza bold-text" for="photo-url">Photo URL</label>
+                <input class="text-box text-box-styling photo-url" type="text" id="photo-url" name="photo-url" required>
               </div>
             </div>
-          </div>
-          <div class="row">
             <div class="column-full">
-              <div class="text-box-styles justify-right">
+              <div class="positioning">
+                <label class="font-proza bold-text" for="notes">Notes</label>
+                <textarea class="notes-text-box text-box-styling font-proza" type="text" id="notes" name="notes" required></textarea>
+              </div>
+            </div>
+            <div class="column-full">
+              <div class="positioning justify-right">
                 <button class="save-button">SAVE</button>
               </div>
             </div>

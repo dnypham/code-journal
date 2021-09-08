@@ -1,13 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
 
-h1,
-label {
+/* ----------UTILITY---------- */
+
+.font-open {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-proza {
   font-family: 'Proza Libre', sans-serif;
 }
 
-label {
+.padding {
+  padding: 10px;
+}
+
+.text-box-styling {
+  color: #181818;
+  padding: 10px;
+  border: 1px solid #b7b7b7;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+
+.bold-text {
   font-weight: bold;
+}
+
+.thin-text {
+  font-weight: 100;
+}
+
+.positioning {
+  padding: 10px 0;
+  line-height: 2em;
 }
 
 /* ----------HEADER---------- */
@@ -18,11 +45,10 @@ label {
   font-size: 10px;
 }
 
-/* ----------MAIN---------- */
+/* ----------FORM---------- */
 
 body {
   background-color: #eee;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .placeholder-img {
@@ -32,30 +58,12 @@ body {
   border-radius: 4px;
 }
 
-/* ----------FORM---------- */
-
-.text-box-styles {
-  padding: 10px 0;
-  line-height: 2em;
-}
-
-input:focus,
-textarea:focus {
-  outline-color: #472b71;
-}
-
 .text-box {
-  display: block;
-  width: 100%;
   height: 35px;
-  border: 1px solid #b7b7b7;
-  border-radius: 4px;
 }
 
 .notes-text-box {
-  display: block;
   height: 150px;
-  width: 100%;
   resize: none;
 }
 
@@ -69,11 +77,18 @@ textarea:focus {
   border-radius: 4px;
 }
 
-.save-button:hover {
-  background-color: rgb(67, 47, 109, 0.9);
-}
-
 .justify-right {
   display: flex;
   justify-content: flex-end;
+}
+
+/* ----------PSEUDO-CLASSES---------- */
+
+input:focus,
+textarea:focus {
+  outline-color: #472b71;
+}
+
+.save-button:hover {
+  background-color: rgb(67, 47, 109, 0.9);
 }
