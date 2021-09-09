@@ -25,6 +25,18 @@ $form.addEventListener('submit', function (event) {
   data.entries.unshift(entry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
+
+  var $viewList = document.querySelectorAll('.view');
+
+  for (var i = 0; i < $viewList.length; i++) {
+    if ($viewList[i].className === 'view') {
+      $viewList[i].className = 'view hidden';
+    }
+
+    if ($viewList[i].className === 'view hidden') {
+      $viewList[i].className = 'view';
+    }
+  }
 });
 
 function renderEntry(entry) {
