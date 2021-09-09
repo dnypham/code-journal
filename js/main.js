@@ -2,7 +2,8 @@
 /* exported data */
 var $form = document.querySelector('form');
 var $img = document.querySelector('img');
-var $ul = document.querySelector('ul');
+
+// Photo URL event listener
 
 $form.addEventListener('focusout', function (event) {
   if (event.target.matches('.photo-url')) {
@@ -12,6 +13,10 @@ $form.addEventListener('focusout', function (event) {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   }
 });
+
+// Submit button event listener
+
+var $ul = document.querySelector('ul');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -36,6 +41,8 @@ $form.addEventListener('submit', function (event) {
 
   viewSwap('entries');
 });
+
+// Function to visually create an Entry
 
 function renderEntry(entry) {
   var $li = document.createElement('li');
@@ -71,6 +78,8 @@ function renderEntry(entry) {
 
   return $li;
 }
+
+// Loops through entries array and appends entries to page
 
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
