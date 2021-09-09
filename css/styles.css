@@ -52,6 +52,10 @@
   border-radius: 4px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ----------HEADER---------- */
 .header {
   background-color: #432f6d;
