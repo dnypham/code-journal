@@ -40,8 +40,8 @@ function renderEntry(entry) {
   $divRow.appendChild($divColumn1);
 
   var $img = document.createElement('img');
-  $img.setAttribute('class', 'placeholder-image');
-  $img.setAttribute('src', data.entries.photoUrl);
+  $img.setAttribute('class', 'placeholder-img');
+  $img.setAttribute('src', entry.photoUrl);
   $img.setAttribute('alt', 'Entry image');
   $divColumn1.appendChild($img);
 
@@ -50,14 +50,22 @@ function renderEntry(entry) {
   $divRow.appendChild($divColumn2);
 
   var $h2 = document.createElement('h2');
-  var $text1 = document.createTextNode(data.entries.title);
+  var $text1 = document.createTextNode(entry.title);
   $h2.appendChild($text1);
   $divColumn2.appendChild($h2);
 
   var $p = document.createElement('p');
-  var $text2 = document.createTextNode(data.entries.notes);
+  var $text2 = document.createTextNode(entry.notes);
   $p.appendChild($text2);
   $divColumn2.appendChild($p);
 
   return $li;
 }
+
+var $ul = document.querySelector('ul');
+
+window.addEventListener('DOMContentLoaded', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    $ul.appendChild(renderEntry(data.entries[i]));
+  }
+});
