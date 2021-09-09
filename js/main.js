@@ -2,6 +2,7 @@
 /* exported data */
 var $form = document.querySelector('form');
 var $img = document.querySelector('img');
+var $ul = document.querySelector('ul');
 
 $form.addEventListener('focusout', function (event) {
   if (event.target.matches('.photo-url')) {
@@ -22,8 +23,15 @@ $form.addEventListener('submit', function (event) {
   };
 
   data.nextEntryId++;
+
   data.entries.unshift(entry);
+
+  var newEntry = renderEntry(entry);
+
+  $ul.prepend(newEntry);
+
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+
   $form.reset();
 
   viewSwap('entries');
@@ -64,14 +72,18 @@ function renderEntry(entry) {
   return $li;
 }
 
-var $ul = document.querySelector('ul');
-
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     $ul.appendChild(renderEntry(data.entries[i]));
   }
 
   viewSwap(data.view);
+
+  var $pDiv = document.querySelector('.no-entries');
+
+  if (data.nextEntryId > 1) {
+    $pDiv.classList.add('hidden');
+  }
 });
 
 // View Swapping
