@@ -26,17 +26,11 @@ $form.addEventListener('submit', function (event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 
-  var $viewList = document.querySelectorAll('.view');
+  var $entryFormView = document.querySelector('.entry-form-view');
+  var $entriesView = document.querySelector('.entries-view');
 
-  for (var i = 0; i < $viewList.length; i++) {
-    if ($viewList[i].className === 'view') {
-      $viewList[i].className = 'view hidden';
-    }
-
-    if ($viewList[i].className === 'view hidden') {
-      $viewList[i].className = 'view';
-    }
-  }
+  $entryFormView.classList.add('hidden');
+  $entriesView.classList.remove('hidden');
 });
 
 function renderEntry(entry) {
@@ -80,4 +74,16 @@ window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     $ul.appendChild(renderEntry(data.entries[i]));
   }
+});
+
+// Click on Entries switches views
+
+var $entriesNav = document.querySelector('.entries');
+
+$entriesNav.addEventListener('click', function (event) {
+  var $entryFormView = document.querySelector('.entry-form-view');
+  var $entriesView = document.querySelector('.entries-view');
+
+  $entryFormView.classList.add('hidden');
+  $entriesView.classList.remove('hidden');
 });
