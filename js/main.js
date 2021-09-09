@@ -26,12 +26,6 @@ $form.addEventListener('submit', function (event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 
-  var $entryFormView = document.querySelector('.entry-form-view');
-  var $entriesView = document.querySelector('.entries-view');
-
-  $entryFormView.classList.add('hidden');
-  $entriesView.classList.remove('hidden');
-
   viewSwap('entries');
 });
 
