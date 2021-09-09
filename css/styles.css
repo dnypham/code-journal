@@ -128,8 +128,10 @@ body {
   margin-bottom: 50px;
 }
 
-.test {
-  vertical-align: text-top;
+.no-entries {
+  padding-top: 25px;
+  font-size: 16px;
+  text-align: center;
 }
 
 /* ----------PSEUDO-CLASSES---------- */

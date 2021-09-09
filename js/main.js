@@ -31,6 +31,8 @@ $form.addEventListener('submit', function (event) {
 
   $entryFormView.classList.add('hidden');
   $entriesView.classList.remove('hidden');
+
+  data.view = 'entries';
 });
 
 function renderEntry(entry) {
@@ -74,28 +76,34 @@ window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     $ul.appendChild(renderEntry(data.entries[i]));
   }
+
+  if (data.view === 'entries') {
+    $entryFormView.classList.add('hidden');
+    $entriesView.classList.remove('hidden');
+  } else if (data.view === 'entry-form') {
+    $entryFormView.classList.remove('hidden');
+    $entriesView.classList.add('hidden');
+  }
 });
 
-// Clicking on 'Entries' in the Navigation Bar switches view to Entries
+// View Swapping
 
 var $entriesNav = document.querySelector('.entries');
+var $newButton = document.querySelector('.new-button');
+var $entryFormView = document.querySelector('.entry-form-view');
+var $entriesView = document.querySelector('.entries-view');
 
 $entriesNav.addEventListener('click', function (event) {
-  var $entryFormView = document.querySelector('.entry-form-view');
-  var $entriesView = document.querySelector('.entries-view');
-
   $entryFormView.classList.add('hidden');
   $entriesView.classList.remove('hidden');
+
+  data.view = 'entries';
 });
 
-// Clicking New button switches view to New Entry Form
-
-var $newButton = document.querySelector('.new-button');
-
 $newButton.addEventListener('click', function (event) {
-  var $entryFormView = document.querySelector('.entry-form-view');
-  var $entriesView = document.querySelector('.entries-view');
 
   $entryFormView.classList.remove('hidden');
   $entriesView.classList.add('hidden');
+
+  data.view = 'entry-form';
 });
