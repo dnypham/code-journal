@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
   }
 });
 
-// Click on Entries switches views
+// Clicking on 'Entries' in the Navigation Bar switches view to Entries
 
 var $entriesNav = document.querySelector('.entries');
 
@@ -86,4 +86,16 @@ $entriesNav.addEventListener('click', function (event) {
 
   $entryFormView.classList.add('hidden');
   $entriesView.classList.remove('hidden');
+});
+
+// Clicking New button switches view to New Entry Form
+
+var $newButton = document.querySelector('.new-button');
+
+$newButton.addEventListener('click', function (event) {
+  var $entryFormView = document.querySelector('.entry-form-view');
+  var $entriesView = document.querySelector('.entries-view');
+
+  $entryFormView.classList.remove('hidden');
+  $entriesView.classList.add('hidden');
 });
