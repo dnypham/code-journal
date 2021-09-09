@@ -2,6 +2,8 @@
 /* exported data */
 var $form = document.querySelector('form');
 var $img = document.querySelector('img');
+var $ul = document.querySelector('ul');
+var $pDiv = document.querySelector('.no-entries');
 
 // Photo URL event listener
 
@@ -15,8 +17,6 @@ $form.addEventListener('focusout', function (event) {
 });
 
 // Submit button event listener
-
-var $ul = document.querySelector('ul');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -39,7 +39,10 @@ $form.addEventListener('submit', function (event) {
 
   $form.reset();
 
+  $pDiv.classList.add('hidden');
+
   viewSwap('entries');
+
 });
 
 // Function to visually create an Entry
@@ -87,8 +90,6 @@ window.addEventListener('DOMContentLoaded', function (event) {
   }
 
   viewSwap(data.view);
-
-  var $pDiv = document.querySelector('.no-entries');
 
   if (data.nextEntryId > 1) {
     $pDiv.classList.add('hidden');
