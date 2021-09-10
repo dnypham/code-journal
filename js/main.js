@@ -153,7 +153,7 @@ $entriesNav.addEventListener('click', function (event) {
 
 $newButton.addEventListener('click', function (event) {
   viewSwap('entry-form');
-
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   reset();
 });
 
@@ -183,6 +183,8 @@ $ul.addEventListener('click', function (event) {
       }
     }
   }
+  $img.setAttribute('src', $form.photoUrl.value);
+
 });
 
 // function to reset values
