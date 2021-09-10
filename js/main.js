@@ -131,6 +131,10 @@ function viewSwap(view) {
 
 $entriesNav.addEventListener('click', function (event) {
   viewSwap('entries');
+
+  $title.value = '';
+  $photoUrl.value = '';
+  $notes.value = '';
 });
 
 $newButton.addEventListener('click', function (event) {
@@ -153,11 +157,11 @@ $ul.addEventListener('click', function (event) {
     for (var i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === $entryId) {
         data.editing = data.entries[i];
+
+        $title.value = data.entries[i].title;
+        $photoUrl.value = data.entries[i].photoUrl;
+        $notes.value = data.entries[i].notes;
       }
     }
-
-    $title.value = data.editing.title;
-    $photoUrl.value = data.editing.photoUrl;
-    $notes.value = data.editing.notes;
   }
 });
