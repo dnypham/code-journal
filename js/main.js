@@ -20,28 +20,44 @@ $form.addEventListener('focusout', function (event) {
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
-  var entry = {
-    title: $form.title.value,
-    photoUrl: $form.photoUrl.value,
-    notes: $form.notes.value,
-    entryId: data.nextEntryId
-  };
 
-  data.nextEntryId++;
+  if (data.editing !== null) {
+    data.editing.title = $form.title.value;
+    data.editing.photoUrl = $form.photoUrl.value;
+    data.editing.notes = $form.notes.value;
 
-  data.entries.unshift(entry);
+    $ul.innerHTML = '';
 
-  var newEntry = renderEntry(entry);
+    for (var i = 0; i < data.entries.length; i++) {
+      $ul.appendChild(renderEntry(data.entries[i]));
+    }
 
-  $ul.prepend(newEntry);
+  } else {
+    var entry = {
+      title: $form.title.value,
+      photoUrl: $form.photoUrl.value,
+      notes: $form.notes.value,
+      entryId: data.nextEntryId
+    };
 
-  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+    data.nextEntryId++;
+
+    data.entries.unshift(entry);
+
+    var newEntry = renderEntry(entry);
+
+    $ul.prepend(newEntry);
+
+    $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  }
 
   $form.reset();
 
   $pDiv.classList.add('hidden');
 
   viewSwap('entries');
+
+  reset();
 
 });
 
@@ -132,10 +148,7 @@ function viewSwap(view) {
 $entriesNav.addEventListener('click', function (event) {
   viewSwap('entries');
 
-  $title.value = '';
-  $photoUrl.value = '';
-  $notes.value = '';
-  data.editing = null;
+  reset();
 });
 
 $newButton.addEventListener('click', function (event) {
@@ -166,3 +179,12 @@ $ul.addEventListener('click', function (event) {
     }
   }
 });
+
+// function to reset values
+
+function reset() {
+  $title.value = '';
+  $photoUrl.value = '';
+  $notes.value = '';
+  data.editing = null;
+}
