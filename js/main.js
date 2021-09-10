@@ -153,6 +153,8 @@ $entriesNav.addEventListener('click', function (event) {
 
 $newButton.addEventListener('click', function (event) {
   viewSwap('entry-form');
+
+  reset();
 });
 
 // Event Listener for editing entry
@@ -160,8 +162,11 @@ $newButton.addEventListener('click', function (event) {
 var $title = document.querySelector('#title');
 var $photoUrl = document.querySelector('#photo-url');
 var $notes = document.querySelector('#notes');
+var $entryHeader = document.querySelector('#entry-header');
 
 $ul.addEventListener('click', function (event) {
+  $entryHeader.textContent = 'Edit Entry';
+
   if (event.target.matches('i')) {
     viewSwap('entry-form');
 
@@ -187,4 +192,7 @@ function reset() {
   $photoUrl.value = '';
   $notes.value = '';
   data.editing = null;
+
+  $entryHeader.textContent = 'New Entry';
+
 }
