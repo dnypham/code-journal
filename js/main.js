@@ -47,9 +47,12 @@ $form.addEventListener('submit', function (event) {
 
 // Function to visually create an Entry
 
+var idNumber = 1;
+
 function renderEntry(entry) {
   var $li = document.createElement('li');
   $li.setAttribute('class', 'entry');
+  $li.setAttribute('data-entry-id', idNumber);
 
   var $divRow = document.createElement('div');
   $divRow.setAttribute('class', 'row');
@@ -90,6 +93,7 @@ function renderEntry(entry) {
   $p.appendChild($text2);
   $divColumn2.appendChild($p);
 
+  idNumber++;
   return $li;
 }
 
