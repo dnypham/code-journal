@@ -142,5 +142,14 @@ $newButton.addEventListener('click', function (event) {
 $ul.addEventListener('click', function (event) {
   if (event.target.matches('i')) {
     viewSwap('entry-form');
+
+    var $li = event.target.closest('.entry');
+    var $entryId = parseInt($li.getAttribute('data-entry-id'));
+
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === $entryId) {
+        data.editing = data.entries[i];
+      }
+    }
   }
 });
