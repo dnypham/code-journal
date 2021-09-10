@@ -137,8 +137,10 @@ $newButton.addEventListener('click', function (event) {
   viewSwap('entry-form');
 });
 
-// Event Listener for the entry-list div
+// Event Listener for editing entry
 
 $ul.addEventListener('click', function (event) {
-  viewSwap('entry-form');
+  if (event.target.matches('i')) {
+    viewSwap('entry-form');
+  }
 });
