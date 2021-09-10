@@ -135,6 +135,7 @@ $entriesNav.addEventListener('click', function (event) {
   $title.value = '';
   $photoUrl.value = '';
   $notes.value = '';
+  data.editing = null;
 });
 
 $newButton.addEventListener('click', function (event) {
