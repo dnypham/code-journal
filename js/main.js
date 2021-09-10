@@ -69,13 +69,24 @@ function renderEntry(entry) {
   $divColumn2.setAttribute('class', 'column-half');
   $divRow.appendChild($divColumn2);
 
+  var $divFlex = document.createElement('div');
+  $divFlex.setAttribute('class', 'edit-flex');
+  $divColumn2.appendChild($divFlex);
+
   var $h2 = document.createElement('h2');
   var $text1 = document.createTextNode(entry.title);
+  $h2.setAttribute('class', 'font-proza');
   $h2.appendChild($text1);
-  $divColumn2.appendChild($h2);
+  $divFlex.appendChild($h2);
+
+  var $editIcon = document.createElement('i');
+  $editIcon.setAttribute('class', 'fas fa-pen fa-2x');
+  $editIcon.classList.add('edit');
+  $divFlex.appendChild($editIcon);
 
   var $p = document.createElement('p');
   var $text2 = document.createTextNode(entry.notes);
+  $p.setAttribute('class', 'font-open');
   $p.appendChild($text2);
   $divColumn2.appendChild($p);
 
