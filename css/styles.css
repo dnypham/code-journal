@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
 
 /* ----------UTILITY---------- */
@@ -9,6 +9,10 @@
 
 .font-proza {
   font-family: 'Proza Libre', sans-serif;
+}
+
+.font-sans {
+  font-family: sans-serif;
 }
 
 .text-box-styling {
@@ -122,6 +126,7 @@ body {
 .entry-list {
   list-style: none;
   padding-left: 0;
+  font-size: 16px;
 }
 
 .entry {
@@ -132,6 +137,17 @@ body {
   padding-top: 25px;
   font-size: 16px;
   text-align: center;
+}
+
+.edit-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit {
+  color: #432f6d;
+  cursor: pointer;
 }
 
 /* ----------PSEUDO-CLASSES---------- */
@@ -145,6 +161,10 @@ textarea:focus {
   background-color: rgb(67, 47, 109, 0.9);
 }
 
+.edit:hover {
+  color: rgb(67, 47, 109, 0.9);
+}
+
 .nav-links > a:hover {
-  color: rgb(238, 234, 242, 0.8);
+  color: rgb(238, 234, 242, 0.7);
 }
