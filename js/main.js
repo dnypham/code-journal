@@ -139,6 +139,10 @@ $newButton.addEventListener('click', function (event) {
 
 // Event Listener for editing entry
 
+var $title = document.querySelector('#title');
+var $photoUrl = document.querySelector('#photo-url');
+var $notes = document.querySelector('#notes');
+
 $ul.addEventListener('click', function (event) {
   if (event.target.matches('i')) {
     viewSwap('entry-form');
@@ -151,5 +155,9 @@ $ul.addEventListener('click', function (event) {
         data.editing = data.entries[i];
       }
     }
+
+    $title.value = data.editing.title;
+    $photoUrl.value = data.editing.photoUrl;
+    $notes.value = data.editing.notes;
   }
 });
