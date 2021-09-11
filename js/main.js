@@ -122,6 +122,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
   if (data.nextEntryId > 1) {
     $pDiv.classList.add('hidden');
   }
+  reset();
 });
 
 // View Swapping
@@ -204,6 +205,10 @@ function reset() {
 
   $switchPosition.className = 'justify-right';
   $deleteModalButton.classList.add('hidden');
+
+  if (data.entries.length === 0) {
+    $pDiv.classList.remove('hidden');
+  }
 }
 
 // Delete button click event
@@ -221,4 +226,22 @@ var $cancelButton = document.querySelector('.cancel');
 
 $cancelButton.addEventListener('click', function (event) {
   $popUpContainer.classList.add('hidden');
+});
+
+// Confirm button
+
+var $confirmButton = document.querySelector('.confirm');
+
+$confirmButton.addEventListener('click', function (event) {
+  data.entries.splice(data.editing.entryId.value, 1);
+
+  $ul.innerHTML = '';
+
+  for (var i = 0; i < data.entries.length; i++) {
+    $ul.appendChild(renderEntry(data.entries[i]));
+  }
+
+  $popUpContainer.classList.add('hidden');
+  reset();
+  viewSwap('entries');
 });
