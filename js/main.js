@@ -164,6 +164,9 @@ var $photoUrl = document.querySelector('#photo-url');
 var $notes = document.querySelector('#notes');
 var $entryHeader = document.querySelector('#entry-header');
 
+var $switchPosition = document.querySelector('#switch-position');
+var $deleteModalButton = document.querySelector('.delete-modal-button');
+
 $ul.addEventListener('click', function (event) {
   $entryHeader.textContent = 'Edit Entry';
 
@@ -185,6 +188,8 @@ $ul.addEventListener('click', function (event) {
   }
   $img.setAttribute('src', $form.photoUrl.value);
 
+  $switchPosition.className = 'flex-space-between';
+  $deleteModalButton.classList.remove('hidden');
 });
 
 // function to reset values
@@ -196,12 +201,18 @@ function reset() {
   data.editing = null;
 
   $entryHeader.textContent = 'New Entry';
+
+  $switchPosition.className = 'justify-right';
+  $deleteModalButton.classList.add('hidden');
 }
 
 // Delete button click event
 
-var $deletePopUp = document.querySelector('.delete-modal');
+var $deletePopUp = document.querySelector('.delete-modal-button');
+var $popUpContainer = document.querySelector('.pop-up-container');
 
 $deletePopUp.addEventListener('click', function (event) {
-
+  $popUpContainer.classList.remove('hidden');
 });
+
+// Cancel button
