@@ -196,5 +196,12 @@ function reset() {
   data.editing = null;
 
   $entryHeader.textContent = 'New Entry';
-
 }
+
+// Delete button click event
+
+var $deletePopUp = document.querySelector('.delete-modal');
+
+$deletePopUp.addEventListener('click', function (event) {
+
+});
