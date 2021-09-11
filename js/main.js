@@ -216,3 +216,9 @@ $deletePopUp.addEventListener('click', function (event) {
 });
 
 // Cancel button
+
+var $cancelButton = document.querySelector('.cancel');
+
+$cancelButton.addEventListener('click', function (event) {
+  $popUpContainer.classList.add('hidden');
+});
