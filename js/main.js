@@ -233,14 +233,16 @@ $cancelButton.addEventListener('click', function (event) {
 var $confirmButton = document.querySelector('.confirm');
 
 $confirmButton.addEventListener('click', function (event) {
-  data.entries.splice(data.editing.entryId.value, 1);
-
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.editing.entryId === data.entries[i].entryId) {
+      data.entries.splice(data.entries.indexOf(data.entries[i]), 1);
+    }
+  }
   $ul.innerHTML = '';
 
-  for (var i = 0; i < data.entries.length; i++) {
-    $ul.appendChild(renderEntry(data.entries[i]));
+  for (var x = 0; x < data.entries.length; x++) {
+    $ul.appendChild(renderEntry(data.entries[x]));
   }
-
   $popUpContainer.classList.add('hidden');
   reset();
   viewSwap('entries');
