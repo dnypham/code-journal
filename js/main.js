@@ -122,6 +122,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
   if (data.nextEntryId > 1) {
     $pDiv.classList.add('hidden');
   }
+  reset();
 });
 
 // View Swapping
@@ -164,6 +165,9 @@ var $photoUrl = document.querySelector('#photo-url');
 var $notes = document.querySelector('#notes');
 var $entryHeader = document.querySelector('#entry-header');
 
+var $switchPosition = document.querySelector('#switch-position');
+var $deleteModalButton = document.querySelector('.delete-modal-button');
+
 $ul.addEventListener('click', function (event) {
   $entryHeader.textContent = 'Edit Entry';
 
@@ -185,6 +189,8 @@ $ul.addEventListener('click', function (event) {
   }
   $img.setAttribute('src', $form.photoUrl.value);
 
+  $switchPosition.className = 'flex-space-between';
+  $deleteModalButton.classList.remove('hidden');
 });
 
 // function to reset values
@@ -197,4 +203,47 @@ function reset() {
 
   $entryHeader.textContent = 'New Entry';
 
+  $switchPosition.className = 'justify-right';
+  $deleteModalButton.classList.add('hidden');
+
+  if (data.entries.length === 0) {
+    $pDiv.classList.remove('hidden');
+  }
 }
+
+// Delete button click event
+
+var $deletePopUp = document.querySelector('.delete-modal-button');
+var $popUpContainer = document.querySelector('.pop-up-container');
+
+$deletePopUp.addEventListener('click', function (event) {
+  $popUpContainer.classList.remove('hidden');
+});
+
+// Cancel button
+
+var $cancelButton = document.querySelector('.cancel');
+
+$cancelButton.addEventListener('click', function (event) {
+  $popUpContainer.classList.add('hidden');
+});
+
+// Confirm button
+
+var $confirmButton = document.querySelector('.confirm');
+
+$confirmButton.addEventListener('click', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.editing.entryId === data.entries[i].entryId) {
+      data.entries.splice(data.entries.indexOf(data.entries[i]), 1);
+    }
+  }
+  $ul.innerHTML = '';
+
+  for (var x = 0; x < data.entries.length; x++) {
+    $ul.appendChild(renderEntry(data.entries[x]));
+  }
+  $popUpContainer.classList.add('hidden');
+  reset();
+  viewSwap('entries');
+});

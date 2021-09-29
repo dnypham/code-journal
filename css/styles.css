@@ -60,6 +60,10 @@
   display: none;
 }
 
+.relative {
+  position: relative;
+}
+
 /* ----------HEADER---------- */
 .header {
   background-color: #432f6d;
@@ -117,6 +121,12 @@ body {
   justify-content: flex-end;
 }
 
+.delete-modal-button {
+  color: #d23c30;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* ----------ENTRIES---------- */
 
 .new-button {
@@ -150,6 +160,61 @@ body {
   cursor: pointer;
 }
 
+/* ----------DELETE MODAL---------- */
+
+.pop-up-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(34, 33, 33, 0.9);
+}
+
+.pop-up {
+  display: flex;
+  background-color: whitesmoke;
+  width: 310px;
+  height: 120px;
+  border-radius: 4px;
+  border: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.popup-buttons {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.cancel {
+  cursor: pointer;
+  color: black;
+  background-color: #b6b6b6;
+  width: 70px;
+  height: 25px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.confirm {
+  cursor: pointer;
+  color: white;
+  background-color: #d23c30;
+  width: 80px;
+  height: 25px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
 /* ----------PSEUDO-CLASSES---------- */
 
 input:focus,
@@ -167,4 +232,16 @@ textarea:focus {
 
 .nav-links > a:hover {
   color: rgb(238, 234, 242, 0.7);
+}
+
+.delete-modal:hover {
+  color: rgb(210, 60, 48, 0.7);
+}
+
+.cancel:hover {
+  background-color: rgb(182, 182, 182, 0.9);
+}
+
+.confirm:hover {
+  background-color: rgb(210, 60, 48, 0.9);
 }
